@@ -1,0 +1,206 @@
+# Secure Login System — Project 
+
+## 1. Introduction
+
+The **Secure Login System** is a Python-based web application developed to provide a secure and simple user authentication mechanism. The system allows users to create an account, log in using their registered credentials, access a protected dashboard, and securely log out.
+
+The main purpose of this project is to understand how authentication works in a real-world application and how basic security practices can be applied while developing a login system. The project uses **Python, Flask, SQLite, and Bcrypt** for application development and password security.
+
+## 2. Problem Statement
+
+Many applications require users to authenticate before accessing personal or restricted information. Storing passwords directly or using insecure authentication methods can expose user accounts to security threats.
+
+The objective of this project is to develop a login system that avoids storing passwords in plain text and provides controlled access to authenticated users.
+
+## 3. Objectives
+
+The main objectives of the Secure Login System are:
+
+* To develop a functional user registration and login system using Python.
+* To securely store user passwords using password hashing.
+* To validate user input during registration and login.
+* To use sessions for maintaining authenticated users.
+* To restrict unauthorized access to protected pages.
+* To provide a simple and user-friendly authentication interface.
+* To understand basic secure coding practices.
+
+## 4. Technologies Used
+
+**Python:** Used as the main programming language for application development.
+
+**Flask:** A lightweight Python web framework used to create routes and handle web requests.
+
+**SQLite:** Used as the database for storing user information and password hashes.
+
+**Bcrypt:** Used for securely hashing and verifying passwords.
+
+**HTML/CSS:** Used to create and style the application's user interface.
+
+**Git & GitHub:** Used for version control and project submission.
+
+## 5. System Requirements
+
+### Hardware Requirements
+
+* Computer/Laptop
+* Minimum 4 GB RAM
+* Basic storage space
+* Internet connection for installing packages and GitHub submission
+
+### Software Requirements
+
+* Python 3.x
+* Flask
+* Bcrypt
+* SQLite
+* Web browser
+* VS Code or any suitable Python IDE
+* Git/GitHub
+
+## 6. System Features
+
+### User Registration
+
+A new user can create an account by entering a username, email address, and password. The system validates the input before creating the account.
+
+### Secure Password Storage
+
+Passwords are never stored as plain text. The password is converted into a secure hash using **Bcrypt** before being stored in the database.
+
+### User Login
+
+Registered users can enter their username and password. The system compares the entered password with the stored password hash and grants access only when the credentials are valid.
+
+### Session Management
+
+After successful login, a session is created for the authenticated user. This allows the application to recognize the logged-in user while accessing protected pages.
+
+### Protected Dashboard
+
+The dashboard can only be accessed by authenticated users. If a user tries to access it without logging in, the system redirects them to the login page.
+
+### Logout
+
+The logout function clears the user's session and ends the authenticated state.
+
+### Input Validation
+
+The system checks required fields and ensures that the password meets the minimum length requirement.
+
+### SQL Injection Protection
+
+Parameterized SQL queries are used when interacting with the database to reduce the risk of SQL injection attacks.
+
+## 7. System Workflow
+
+The working process of the application is:
+
+**User → Registration → Input Validation → Password Hashing → Database Storage → Login → Credential Verification → Session Creation → Protected Dashboard → Logout**
+
+During registration, the user's password is converted into a hash using Bcrypt. The username, email, and password hash are then stored in the SQLite database.
+
+During login, the system retrieves the user's stored password hash and verifies the entered password against it. If the verification is successful, a session is created and the user is redirected to the protected dashboard.
+
+## 8. Database Design
+
+The SQLite database contains a `users` table with the following fields:
+
+| Field           | Description                        |
+| --------------- | ---------------------------------- |
+| `id`            | Unique ID of the user              |
+| `username`      | User's unique username             |
+| `email`         | User's email address               |
+| `password_hash` | Bcrypt hash of the user's password |
+
+The actual password is not stored in the database. Only its secure hash is stored.
+
+## 9. Security Implementation
+
+Security is the main focus of this project. Several basic security practices have been implemented.
+
+**Password Hashing:** Bcrypt is used instead of storing plain-text passwords.
+
+**Parameterized Queries:** SQL queries use parameters instead of directly inserting user input into SQL statements.
+
+**Session Protection:** The session is cleared when the user logs out.
+
+**Authentication Check:** Protected pages verify whether the user is logged in before providing access.
+
+**Input Validation:** Empty fields and short passwords are rejected during registration.
+
+These techniques help reduce common authentication and database-related security risks.
+
+## 10. Testing
+
+The application can be tested using different scenarios.
+
+| Test Case              | Input                   | Expected Result         |
+| ---------------------- | ----------------------- | ----------------------- |
+| Valid Registration     | Correct user details    | Account created         |
+| Empty Registration     | Missing fields          | Error message displayed |
+| Duplicate Registration | Existing username/email | Registration rejected   |
+| Valid Login            | Correct credentials     | Dashboard displayed     |
+| Invalid Login          | Wrong password          | Access denied           |
+| Protected Page         | User not logged in      | Redirected to login     |
+| Logout                 | Click logout            | Session cleared         |
+
+The testing confirms that the basic authentication workflow operates correctly under normal and invalid conditions.
+
+## 11. Advantages
+
+The Secure Login System provides a simple and practical authentication solution. It improves password security through hashing, prevents unauthorized dashboard access, provides session-based authentication, and uses parameterized database queries. The project is also lightweight and easy to understand, making it suitable for learning Python and basic web security concepts.
+
+## 12. Limitations
+
+The current project is an internship-level implementation and does not include all security features required for a production application. Features such as email verification, password recovery, multi-factor authentication, CAPTCHA, rate limiting, advanced logging, and role-based access control can be added in future versions.
+
+## 13. Future Scope
+
+The project can be further improved by adding:
+
+* Two-factor or multi-factor authentication
+* Email verification
+* Forgot-password functionality
+* Role-based access control
+* Login attempt monitoring
+* Rate limiting
+* CAPTCHA
+* Security audit logs
+* HTTPS deployment
+* Password-strength checking
+* Admin dashboard
+* Automated security testing
+
+These improvements would make the application more suitable for real-world deployment.
+
+## 14. Learning Outcomes
+
+Through this project, I gained practical knowledge of Python-based web application development and authentication. I learned how to work with Flask routes, SQLite databases, password hashing, sessions, form validation, and secure database queries.
+
+The project also helped me understand the importance of security while designing applications and strengthened my ability to apply Cyber Security concepts to practical programming problems.
+
+## 15. Conclusion
+
+The **Secure Login System** successfully demonstrates the implementation of a basic secure authentication application using Python. The system provides registration, login, password hashing, session management, protected dashboard access, and logout functionality.
+
+The project helped me connect Python programming with Cyber Security concepts and provided valuable practical experience in secure application development. It also created a foundation for developing more advanced authentication and security solutions in the future.
+
+## 16. GitHub Submission
+
+**Repository Name:** `upskillcampus`
+
+**Project File:** `SecureLoginSystem.py`
+
+**Report File:** `SecureLoginSystem_Chandrakanta_Dhaker.pdf`
+
+Great. Your GitHub links should now be:
+
+**Repository:** `upskillcampus`
+
+**Python Code:**
+`https://github.com/Chandrakanta05/upskillcampus/blob/main/SecureLoginSystem.py`
+
+**Final Report:**
+`https://github.com/Chandrakanta05/upskillcampus/blob/main/SecureLoginSystem_Chandrakanta_Dhaker.pdf`
+
+Use these exact links in your PDF before uploading the final report to GitHub.
